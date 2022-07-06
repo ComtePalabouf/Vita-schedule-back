@@ -21,7 +21,7 @@ public class VitalityScheduleApplication {
 		return new WebMvcConfigurer() {
 			@Override
 			public void addCorsMappings(CorsRegistry registry) {
-				registry.addMapping("/api/**").allowedOrigins(corsOrigins);
+				registry.addMapping("/api/**").allowedOrigins(corsOrigins.split(","));
 			}
 		};
 	}
