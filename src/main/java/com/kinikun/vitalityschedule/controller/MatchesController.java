@@ -21,7 +21,7 @@ public class MatchesController {
     public ResponseEntity<String> getMatches(@RequestParam String[] teamIds) {
         RestTemplate restTemplate = new RestTemplate();
 
-        StringBuilder apiUrl = new StringBuilder("https://api.pandascore.co/matches?filter[opponent_id]=");
+        StringBuilder apiUrl = new StringBuilder("https://api.pandascore.co/matches?per_page=100&filter[opponent_id]=");
         apiUrl.append(String.join(",", teamIds));
         apiUrl.append("&token=");
         apiUrl.append(apiToken);
